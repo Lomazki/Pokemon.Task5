@@ -2,6 +2,28 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navigation">
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragment_main">
 
+    <fragment
+        android:id="@+id/fragment_main"
+        android:name="by.lomazki.pokemontask5.view.ListPokemonFragment"
+        tools:layout="@layout/fragment_pokemons_list">
+        <action
+            android:id="@+id/action_fragment_main_to_fragment_details"
+            app:destination="@id/fragment_pokemon" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_pokemon"
+        android:name="by.lomazki.pokemontask5.view.DetailsFragment"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="url_pokemon"
+            app:argType="string"
+            />
+        <argument
+            android:name="name"
+            app:argType="string"/>
+    </fragment>
 </navigation>

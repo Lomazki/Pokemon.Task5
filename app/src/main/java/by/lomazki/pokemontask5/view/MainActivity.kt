@@ -1,6 +1,6 @@
-package by.lomazki.pokemontask5
+package by.lomazki.pokemontask5.view
 
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import by.lomazki.pokemontask5.R
 
 class MainActivity : AppCompatActivity(R.layout.activity_main)
