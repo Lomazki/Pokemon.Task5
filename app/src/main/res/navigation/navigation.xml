@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/fragment_main">
+    app:startDestination="@id/fragment_start">
 
     <fragment
         android:id="@+id/fragment_main"
-        android:name="by.lomazki.pokemontask5.view.ListPokemonFragment"
+        android:name="by.lomazki.pokemontask5.presentation.ui.ListPokemonFragment"
         tools:layout="@layout/fragment_pokemons_list">
         <action
             android:id="@+id/action_fragment_main_to_fragment_details"
@@ -16,14 +16,33 @@
 
     <fragment
         android:id="@+id/fragment_pokemon"
-        android:name="by.lomazki.pokemontask5.view.DetailsFragment"
+        android:name="by.lomazki.pokemontask5.presentation.ui.DetailsFragment"
         tools:layout="@layout/fragment_details">
         <argument
-            android:name="url_pokemon"
-            app:argType="string"
-            />
-        <argument
             android:name="name"
-            app:argType="string"/>
+            app:argType="string" />
     </fragment>
+
+    <fragment
+        android:id="@+id/fragment_start"
+        android:name="by.lomazki.pokemontask5.presentation.ui.StartFragment"
+        tools:layout="@layout/fragment_start">
+        <action
+            android:id="@+id/action_fragment_start_to_fragment_main"
+            app:destination="@id/fragment_main" />
+        <action
+            android:id="@+id/action_fragment_start_to_fragment_favourites"
+            app:destination="@id/fragment_favourites" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_favourites"
+        android:name="by.lomazki.pokemontask5.presentation.ui.FavoriteFragment"
+        tools:layout="@layout/fragment_favorite">
+        <action
+            android:id="@+id/action_fragment_favourites_to_fragment_pokemon"
+            app:destination="@id/fragment_pokemon" />
+    </fragment>
+
 </navigation>
