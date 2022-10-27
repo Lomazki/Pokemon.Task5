@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp">
+    android:layout_margin="@dimen/margin_4dp">
 
     <ImageView
         android:id="@+id/iv_item"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="@dimen/image_ava_width_60dp"
+        android:layout_height="@dimen/image_ava_height_60dp"
         tools:src="@tools:sample/avatars" />
 
     <TextView
@@ -16,9 +16,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginStart="60dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:textSize="30sp"
+        android:layout_marginStart="@dimen/margin_start_60dp"
+        android:paddingStart="@dimen/padding_16dp"
+        android:paddingEnd="@dimen/padding_16dp"
+        android:textSize="@dimen/text_size_30sp"
         tools:text="@tools:sample/first_names" />
 </androidx.cardview.widget.CardView>

@@ -33,6 +33,9 @@
         <action
             android:id="@+id/action_fragment_start_to_fragment_favourites"
             app:destination="@id/fragment_favourites" />
+        <action
+            android:id="@+id/action_fragment_start_to_fragment_map"
+            app:destination="@id/fragment_map" />
 
     </fragment>
 
@@ -44,5 +47,10 @@
             android:id="@+id/action_fragment_favourites_to_fragment_pokemon"
             app:destination="@id/fragment_pokemon" />
     </fragment>
+
+    <fragment
+        android:id="@+id/fragment_map"
+        android:name="by.lomazki.pokemontask5.presentation.ui.MapFragment"
+        tools:layout="@layout/fragment_map"/>
 
 </navigation>

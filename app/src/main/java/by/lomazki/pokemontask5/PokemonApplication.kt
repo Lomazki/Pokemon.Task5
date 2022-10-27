@@ -20,7 +20,8 @@ class PokemonApplication : Application() {
                 repositoryModule,
                 roomModule,
                 localDsModule,
-                remoteDsModule
+                remoteDsModule,
+                serviceModule
             )
         }
     }

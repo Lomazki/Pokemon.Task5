@@ -35,6 +35,10 @@ class StartFragment : Fragment() {
             buttonFavPoke.setOnClickListener {
                 findNavController().navigate(R.id.action_fragment_start_to_fragment_favourites)
             }
+
+            buttonMap.setOnClickListener {
+                findNavController().navigate(R.id.action_fragment_start_to_fragment_map)
+            }
         }
     }
 

@@ -11,16 +11,23 @@
 
         <Button
             android:id="@+id/button_all_poke"
-            android:layout_width="320dp"
+            android:layout_width="@dimen/width_button_320dp"
             android:layout_height="wrap_content"
             android:text="@string/all_pokemon"
-            android:textSize="24sp" />
+            android:textSize="@dimen/text_size_24sp" />
 
         <Button
             android:id="@+id/button_fav_poke"
-            android:layout_width="320dp"
+            android:layout_width="@dimen/width_button_320dp"
             android:layout_height="wrap_content"
             android:text="@string/favourites_pokemon"
-            android:textSize="24sp" />
+            android:textSize="@dimen/text_size_24sp" />
+
+        <Button
+            android:id="@+id/button_map"
+            android:layout_width="@dimen/width_button_320dp"
+            android:layout_height="wrap_content"
+            android:text="@string/pokemon_map"
+            android:textSize="@dimen/text_size_24sp" />
     </LinearLayout>
 </FrameLayout>
