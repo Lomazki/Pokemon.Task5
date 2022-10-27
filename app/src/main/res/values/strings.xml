@@ -4,4 +4,11 @@
     <string name="weight">Weight</string>
     <string name="pokemon_list">Pokemon list</string>
     <string name="search">search</string>
+    <string name="favorite">Favorite</string>
+    <string name="all_pokemon">All Pokemon</string>
+    <string name="favourites_pokemon">Favourites Pokemon</string>
+    <string name="add">add</string>
+    <string name="remove">remove</string>
+    <string name="favourite">Favourite</string>
+    <string name="pokemon_map">Map</string>
 </resources>

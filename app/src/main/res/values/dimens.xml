@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="width_image_pokemon">300dp</dimen>
+    <dimen name="height_image_pokemon">300dp</dimen>
+    <dimen name="text_size_24sp">24sp</dimen>
+    <dimen name="image_poke_margin">26dp</dimen>
+    <dimen name="padding_16dp">16dp</dimen>
+    <dimen name="height_favourite_frame">100dp</dimen>
+    <dimen name="text_size_30sp">30sp</dimen>
+    <dimen name="width_button_320dp">320dp</dimen>
+    <dimen name="card_item_margin_4dp">4dp</dimen>
+    <dimen name="image_width_100dp">100dp</dimen>
+    <dimen name="image_height_100dp">100dp</dimen>
+    <dimen name="text_size_18sp">18sp</dimen>
+    <dimen name="margin_4dp">4dp</dimen>
+    <dimen name="check_box_margin_top">20dp</dimen>
+    <dimen name="margin_start_60dp">60dp</dimen>
+    <dimen name="image_ava_width_60dp">60dp</dimen>
+    <dimen name="image_ava_height_60dp">60dp</dimen>
+</resources>
