@@ -1,10 +1,10 @@
 package by.lomazki.pokemontask5.data.mapper
 
 import by.lomazki.pokemontask5.constants.Constants.AVATAR_URL
-import by.lomazki.pokemontask5.data.model.PokemonFullDTO
-import by.lomazki.pokemontask5.data.model.PokemonFullEntity
-import by.lomazki.pokemontask5.data.model.PokemonShortDTO
-import by.lomazki.pokemontask5.data.model.PokemonShortEntity
+import by.lomazki.pokemontask5.data.model.pokemonfull.PokemonFullDTO
+import by.lomazki.pokemontask5.data.model.pokemonfull.PokemonFullEntity
+import by.lomazki.pokemontask5.data.model.pokemonshort.PokemonShortDTO
+import by.lomazki.pokemontask5.data.model.pokemonshort.PokemonShortEntity
 
 fun List<PokemonShortDTO>.toDomainModels(): List<PokemonShortEntity> =
     map { it.toShortDomain() }

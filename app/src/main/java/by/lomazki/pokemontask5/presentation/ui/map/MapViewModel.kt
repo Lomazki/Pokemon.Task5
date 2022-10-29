@@ -1,4 +1,4 @@
-package by.lomazki.pokemontask5.presentation.ui
+package by.lomazki.pokemontask5.presentation.ui.map
 
 import android.location.Location
 import androidx.lifecycle.ViewModel

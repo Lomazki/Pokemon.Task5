@@ -1,8 +1,8 @@
 package by.lomazki.pokemontask5.domain.repository
 
-import by.lomazki.pokemontask5.data.model.PokemonFullEntity
-import by.lomazki.pokemontask5.data.model.PokemonShortDTO
-import by.lomazki.pokemontask5.data.model.PokemonShortEntity
+import by.lomazki.pokemontask5.data.model.pokemonfull.PokemonFullEntity
+import by.lomazki.pokemontask5.data.model.pokemonshort.PokemonShortDTO
+import by.lomazki.pokemontask5.data.model.pokemonshort.PokemonShortEntity
 
 interface Repository {
 

@@ -1,8 +1,8 @@
 package by.lomazki.pokemontask5.data.datasource
 
 import by.lomazki.pokemontask5.data.database.PokemonDatabase
-import by.lomazki.pokemontask5.data.model.PokemonFullEntity
-import by.lomazki.pokemontask5.data.model.PokemonShortEntity
+import by.lomazki.pokemontask5.data.model.pokemonfull.PokemonFullEntity
+import by.lomazki.pokemontask5.data.model.pokemonshort.PokemonShortEntity
 import by.lomazki.pokemontask5.domain.datasource.LocalDataSource
 
 class LocalDataSourceImpl(

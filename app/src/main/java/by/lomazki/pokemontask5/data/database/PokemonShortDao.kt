@@ -1,7 +1,7 @@
 package by.lomazki.pokemontask5.data.database
 
 import androidx.room.*
-import by.lomazki.pokemontask5.data.model.PokemonShortEntity
+import by.lomazki.pokemontask5.data.model.pokemonshort.PokemonShortEntity
 
 @Dao
 interface PokemonShortDao {

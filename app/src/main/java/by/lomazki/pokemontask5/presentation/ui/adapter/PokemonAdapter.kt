@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import by.lomazki.pokemontask5.data.model.PokemonShortEntity
+import by.lomazki.pokemontask5.data.model.pokemonshort.PokemonShortEntity
 import by.lomazki.pokemontask5.databinding.ItemLoadingBinding
 import by.lomazki.pokemontask5.databinding.ItemPokemonBinding
 import by.lomazki.pokemontask5.presentation.models.Lce
@@ -66,7 +66,6 @@ class PokemonAdapter(
                 oldItem: Lce<PokemonShortEntity>,
                 newItem: Lce<PokemonShortEntity>
             ): Boolean {
-//                return oldItem == newItem
                 return (oldItem as? PokemonShortEntity)?.name == (newItem as? PokemonShortEntity)?.name
             }
 

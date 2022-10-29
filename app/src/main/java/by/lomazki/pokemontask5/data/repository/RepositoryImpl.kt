@@ -3,9 +3,9 @@ package by.lomazki.pokemontask5.data.repository
 import by.lomazki.pokemontask5.data.mapper.toDomainModels
 import by.lomazki.pokemontask5.data.mapper.toPokemonFullEntity
 import by.lomazki.pokemontask5.data.mapper.toShortData
-import by.lomazki.pokemontask5.data.model.PokemonFullEntity
-import by.lomazki.pokemontask5.data.model.PokemonShortDTO
-import by.lomazki.pokemontask5.data.model.PokemonShortEntity
+import by.lomazki.pokemontask5.data.model.pokemonfull.PokemonFullEntity
+import by.lomazki.pokemontask5.data.model.pokemonshort.PokemonShortDTO
+import by.lomazki.pokemontask5.data.model.pokemonshort.PokemonShortEntity
 import by.lomazki.pokemontask5.domain.datasource.LocalDataSource
 import by.lomazki.pokemontask5.domain.datasource.RemoteDataSource
 import by.lomazki.pokemontask5.domain.repository.Repository
@@ -35,7 +35,7 @@ class RepositoryImpl(
                 )
             }
             .map {
-                network.getPokemonListApi(40, 100)      // TODO избавься от магических чисел
+                network.getPokemonListApi(100, 200)      // TODO избавься от магических чисел
                     .fold(
                         onSuccess = { it.toDomainModels() },
                         onFailure = { emptyList() }

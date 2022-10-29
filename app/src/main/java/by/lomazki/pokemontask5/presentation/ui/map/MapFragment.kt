@@ -1,4 +1,4 @@
-package by.lomazki.pokemontask5.presentation.ui
+package by.lomazki.pokemontask5.presentation.ui.map
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -139,8 +139,8 @@ class MapFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
         binding.mapContainer.onDestroy()
+        _binding = null
         googleMap = null
     }
 

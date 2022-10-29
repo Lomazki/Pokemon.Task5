@@ -1,7 +1,7 @@
 package by.lomazki.pokemontask5.data.database
 
 import androidx.room.*
-import by.lomazki.pokemontask5.data.model.PokemonFullEntity
+import by.lomazki.pokemontask5.data.model.pokemonfull.PokemonFullEntity
 
 @Dao
 interface PokemonFullDao {

@@ -5,7 +5,7 @@
     <dimen name="text_size_24sp">24sp</dimen>
     <dimen name="image_poke_margin">26dp</dimen>
     <dimen name="padding_16dp">16dp</dimen>
-    <dimen name="height_favourite_frame">100dp</dimen>
+    <dimen name="height_favourite_frame">90dp</dimen>
     <dimen name="text_size_30sp">30sp</dimen>
     <dimen name="width_button_320dp">320dp</dimen>
     <dimen name="card_item_margin_4dp">4dp</dimen>

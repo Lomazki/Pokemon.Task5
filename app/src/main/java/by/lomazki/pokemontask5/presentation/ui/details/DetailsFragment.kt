@@ -1,4 +1,4 @@
-package by.lomazki.pokemontask5.presentation.ui
+package by.lomazki.pokemontask5.presentation.ui.details
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.navigation.ui.setupWithNavController
 import by.lomazki.pokemontask5.databinding.FragmentDetailsBinding
 import coil.load
 import kotlinx.coroutines.flow.flow
@@ -37,6 +39,8 @@ class DetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.toolbarDetail.setupWithNavController(findNavController())
 
         flow<Nothing> { viewModel.loadPokemon() }.launchIn(lifecycleScope)
 

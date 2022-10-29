@@ -1,8 +1,8 @@
 package by.lomazki.pokemontask5.data.datasource
 
 import by.lomazki.pokemontask5.data.api.PokemonApi
-import by.lomazki.pokemontask5.data.model.PokemonFullDTO
-import by.lomazki.pokemontask5.data.model.PokemonShortDTO
+import by.lomazki.pokemontask5.data.model.pokemonfull.PokemonFullDTO
+import by.lomazki.pokemontask5.data.model.pokemonshort.PokemonShortDTO
 import by.lomazki.pokemontask5.domain.datasource.RemoteDataSource
 
 class RemoteDataSourceImpl(

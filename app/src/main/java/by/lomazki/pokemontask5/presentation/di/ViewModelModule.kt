@@ -1,9 +1,9 @@
 package by.lomazki.pokemontask5.presentation.di
 
-import by.lomazki.pokemontask5.presentation.ui.DetailsViewModel
-import by.lomazki.pokemontask5.presentation.ui.FavoriteViewModel
-import by.lomazki.pokemontask5.presentation.ui.MapViewModel
-import by.lomazki.pokemontask5.presentation.ui.PokemonViewModel
+import by.lomazki.pokemontask5.presentation.ui.details.DetailsViewModel
+import by.lomazki.pokemontask5.presentation.ui.favourite.FavoriteViewModel
+import by.lomazki.pokemontask5.presentation.ui.map.MapViewModel
+import by.lomazki.pokemontask5.presentation.ui.listpokemon.PokemonViewModel
 import org.koin.androidx.viewmodel.dsl.viewModelOf
 import org.koin.dsl.module
 

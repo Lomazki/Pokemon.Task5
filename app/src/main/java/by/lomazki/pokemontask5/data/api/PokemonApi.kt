@@ -1,7 +1,7 @@
 package by.lomazki.pokemontask5.data.api
 
 import by.lomazki.pokemontask5.data.model.GeneralResultDTO
-import by.lomazki.pokemontask5.data.model.PokemonFullDTO
+import by.lomazki.pokemontask5.data.model.pokemonfull.PokemonFullDTO
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

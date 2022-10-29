@@ -1,7 +1,7 @@
 package by.lomazki.pokemontask5.domain.datasource
 
-import by.lomazki.pokemontask5.data.model.PokemonFullDTO
-import by.lomazki.pokemontask5.data.model.PokemonShortDTO
+import by.lomazki.pokemontask5.data.model.pokemonfull.PokemonFullDTO
+import by.lomazki.pokemontask5.data.model.pokemonshort.PokemonShortDTO
 
 interface RemoteDataSource {
 

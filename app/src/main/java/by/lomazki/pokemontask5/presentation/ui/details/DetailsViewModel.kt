@@ -1,8 +1,8 @@
-package by.lomazki.pokemontask5.presentation.ui
+package by.lomazki.pokemontask5.presentation.ui.details
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import by.lomazki.pokemontask5.data.model.PokemonFullEntity
+import by.lomazki.pokemontask5.data.model.pokemonfull.PokemonFullEntity
 import by.lomazki.pokemontask5.domain.repository.Repository
 import by.lomazki.pokemontask5.extentions.addFavourites
 import by.lomazki.pokemontask5.extentions.removeFavourites

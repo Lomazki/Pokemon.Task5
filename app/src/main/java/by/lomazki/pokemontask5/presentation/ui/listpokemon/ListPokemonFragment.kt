@@ -1,4 +1,4 @@
-package by.lomazki.pokemontask5.presentation.ui
+package by.lomazki.pokemontask5.presentation.ui.listpokemon
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import by.lomazki.pokemontask5.data.model.PokemonFullEntity
+import by.lomazki.pokemontask5.data.model.pokemonfull.PokemonFullEntity
 import by.lomazki.pokemontask5.databinding.ItemFavoriteBinding
 
 class FavoriteAdapter(

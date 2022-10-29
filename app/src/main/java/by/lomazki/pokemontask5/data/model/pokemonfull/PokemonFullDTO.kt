@@ -1,4 +1,4 @@
-package by.lomazki.pokemontask5.data.model
+package by.lomazki.pokemontask5.data.model.pokemonfull
 
 // Pokemon приходящий со второго запроса
 data class PokemonFullDTO(

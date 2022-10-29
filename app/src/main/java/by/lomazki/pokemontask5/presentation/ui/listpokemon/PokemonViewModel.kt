@@ -1,10 +1,10 @@
-package by.lomazki.pokemontask5.presentation.ui
+package by.lomazki.pokemontask5.presentation.ui.listpokemon
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import by.lomazki.pokemontask5.constants.Constants.PAGE_SIZE
 import by.lomazki.pokemontask5.data.mapper.toPokemonShortDTO
-import by.lomazki.pokemontask5.data.model.PokemonShortEntity
+import by.lomazki.pokemontask5.data.model.pokemonshort.PokemonShortEntity
 import by.lomazki.pokemontask5.domain.repository.Repository
 import by.lomazki.pokemontask5.presentation.models.Lce
 import kotlinx.coroutines.channels.BufferOverflow

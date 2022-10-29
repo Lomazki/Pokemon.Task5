@@ -1,4 +1,4 @@
-package by.lomazki.pokemontask5.data.model
+package by.lomazki.pokemontask5.data.model.pokemonfull
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

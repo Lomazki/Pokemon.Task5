@@ -1,6 +1,6 @@
 package by.lomazki.pokemontask5.extentions
 
-import by.lomazki.pokemontask5.data.model.PokemonFullEntity
+import by.lomazki.pokemontask5.data.model.pokemonfull.PokemonFullEntity
 
 fun PokemonFullEntity.addFavourites(): PokemonFullEntity {
     return PokemonFullEntity(

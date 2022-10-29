@@ -1,7 +1,9 @@
 package by.lomazki.pokemontask5.presentation.ui.adapter
 
 import androidx.recyclerview.widget.RecyclerView
-import by.lomazki.pokemontask5.data.model.PokemonFullEntity
+import by.lomazki.pokemontask5.constants.Constants.HEIGHT
+import by.lomazki.pokemontask5.constants.Constants.WEIGHT
+import by.lomazki.pokemontask5.data.model.pokemonfull.PokemonFullEntity
 import by.lomazki.pokemontask5.databinding.ItemFavoriteBinding
 import coil.load
 
@@ -15,8 +17,8 @@ class FavoriteViewHolder(
         with(binding) {
             avatarFavorite.load(pokemon.avatarUrl)
             nameFavorite.text = pokemon.name
-            weightFavorite.text = pokemon.weight.toString()
-            heightFavorite.text = pokemon.height.toString()
+            weightFavorite.text = String.format(WEIGHT, pokemon.weight.toString())
+            heightFavorite.text = String.format(HEIGHT, pokemon.height.toString())
             root.setOnClickListener { onPokemonClicked(pokemon) }
         }
     }

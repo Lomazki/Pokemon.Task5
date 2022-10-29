@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_favorites"
+    app:startDestination="@id/fragment_favourites">
+
+    <fragment
+        android:id="@+id/fragment_favourites"
+        android:name="by.lomazki.pokemontask5.presentation.ui.favourite.FavoriteFragment"
+        tools:layout="@layout/fragment_favorite">
+        <action
+            android:id="@+id/action_fragment_favourites_to_fragment_pokemon"
+            app:destination="@id/fragment_pokemon" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_pokemon"
+        android:name="by.lomazki.pokemontask5.presentation.ui.details.DetailsFragment"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+</navigation>
