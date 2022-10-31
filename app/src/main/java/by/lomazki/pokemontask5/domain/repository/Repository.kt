@@ -3,10 +3,13 @@ package by.lomazki.pokemontask5.domain.repository
 import by.lomazki.pokemontask5.data.model.pokemonfull.PokemonFullEntity
 import by.lomazki.pokemontask5.data.model.pokemonshort.PokemonShortDTO
 import by.lomazki.pokemontask5.data.model.pokemonshort.PokemonShortEntity
+import kotlinx.coroutines.flow.Flow
 
 interface Repository {
 
-    suspend fun getPokemonShortList(limit: Int = 40, offset: Int = 0): List<PokemonShortEntity>
+    suspend fun getPokemonShortList(limit: Int = 40, offset: Int = 0): Result<List<PokemonShortEntity>>
+
+    suspend fun getSavedPokemonShortList(): List<PokemonShortEntity>   // удалить
 
     suspend fun insertPokemonShortList(pokemonList: List<PokemonShortDTO>)
 

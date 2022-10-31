@@ -1,5 +1,6 @@
 package by.lomazki.pokemontask5.presentation.ui.listpokemon
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import by.lomazki.pokemontask5.data.mapper.toPokemonShortDTO
@@ -25,7 +26,7 @@ class PokemonViewModel(
 
     init {
         viewModelScope.launch {
-            currentPokemonShortFlow.value = repository.getPokemonShortList()
+            currentPokemonShortFlow.value = repository.getPokemonShortList().getOrDefault(emptyList())
         }
     }
 
@@ -38,14 +39,13 @@ class PokemonViewModel(
                     is Lce.Error -> { /* TODO брось ошибку */ }
                     Lce.Loading -> { currentPage++ }
                 }
-                runCatching {
-                    repository.getPokemonShortList(getLimitPageSize())
-                }
+                repository.getPokemonShortList(limit = getLimitPageSize())
             }
     ) { query, result ->
         result
             .fold(
                 onSuccess = { listPokeShort ->
+                    Log.d("LoadingDB", "3")
                     isLoading = false
                     repository.insertPokemonShortList(listPokeShort.map { it.toPokemonShortDTO() })
                     Lce.ContentPokemon(currentPokemonShortFlow
@@ -54,16 +54,16 @@ class PokemonViewModel(
                     )
                 },
                 onFailure = { Lce.Error(it) }
-
             )
     }.onStart {
+        Log.d("LoadingDB", "1")
         emit(
             Lce.ContentPokemon(
-                repository.getPokemonShortList()
+                repository.getSavedPokemonShortList()
             )
         )
-    }
-        .shareIn(
+        Log.d("LoadingDB", "2")
+    }.shareIn(
             viewModelScope,
             SharingStarted.Eagerly,
             replay = 1
@@ -83,7 +83,8 @@ class PokemonViewModel(
 
     fun onLoadMore() {      // TODO не работает
         if (!isLoading) {
-            lceFlow.tryEmit(Lce.Loading)
+            lceFlow
+                .tryEmit(Lce.Loading)
         }
     }
 }

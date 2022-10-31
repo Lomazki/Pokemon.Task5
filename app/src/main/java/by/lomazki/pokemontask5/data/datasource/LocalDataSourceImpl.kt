@@ -15,8 +15,8 @@ class LocalDataSourceImpl(
         }
     }
 
-    override suspend fun getPokemonFullListRoom(): List<PokemonFullEntity> {
-        return database.pokemonFullDao().getPokemonFullEntityList()
+    override suspend fun getPokemonFullListRoom(): Result<List<PokemonFullEntity>> {
+        return runCatching{ database.pokemonFullDao().getPokemonFullEntityList() }
     }
 
     override suspend fun insertPokemonShortListRoom(pokemons: List<PokemonShortEntity>) {

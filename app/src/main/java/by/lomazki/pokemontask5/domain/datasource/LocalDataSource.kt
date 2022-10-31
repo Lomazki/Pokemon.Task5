@@ -7,7 +7,7 @@ interface LocalDataSource {
 
     suspend fun getPokemonShortListRoom(): Result<List<PokemonShortEntity>>
 
-    suspend fun getPokemonFullListRoom(): List<PokemonFullEntity>
+    suspend fun getPokemonFullListRoom(): Result<List<PokemonFullEntity>>
 
     suspend fun insertPokemonShortListRoom(pokemons: List<PokemonShortEntity>)
 
