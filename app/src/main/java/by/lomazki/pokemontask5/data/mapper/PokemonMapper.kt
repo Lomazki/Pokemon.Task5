@@ -1,6 +1,5 @@
 package by.lomazki.pokemontask5.data.mapper
 
-import by.lomazki.pokemontask5.constants.Constants.AVATAR_URL
 import by.lomazki.pokemontask5.data.model.pokemonfull.PokemonFullDTO
 import by.lomazki.pokemontask5.data.model.pokemonfull.PokemonFullEntity
 import by.lomazki.pokemontask5.data.model.pokemonshort.PokemonShortDTO
@@ -25,3 +24,5 @@ fun PokemonFullDTO.toPokemonFullEntity(): PokemonFullEntity {
     val avatarUrl = AVATAR_URL.format(id)
     return PokemonFullEntity(id, name, weight, height, species.url, avatarUrl, favorite = false)
 }
+
+private const val AVATAR_URL ="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/%d.png"

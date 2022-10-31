@@ -24,6 +24,8 @@ class RepositoryImpl(
 
     init {
         flow<Unit> { pokemonListFullFlow.value = localDB.getPokemonFullListRoom() }
+            .launchIn(MainScope())
+//        flow<Unit>{pokemonListShortFlow.value = localDB.getPokemonShortListRoom()}
     }
 
     private val curShortList: Flow<List<PokemonShortEntity>> =

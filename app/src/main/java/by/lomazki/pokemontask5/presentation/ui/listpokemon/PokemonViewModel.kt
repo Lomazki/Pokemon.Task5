@@ -2,7 +2,6 @@ package by.lomazki.pokemontask5.presentation.ui.listpokemon
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import by.lomazki.pokemontask5.constants.Constants.PAGE_SIZE
 import by.lomazki.pokemontask5.data.mapper.toPokemonShortDTO
 import by.lomazki.pokemontask5.data.model.pokemonshort.PokemonShortEntity
 import by.lomazki.pokemontask5.domain.repository.Repository
@@ -49,15 +48,21 @@ class PokemonViewModel(
                 onSuccess = { listPokeShort ->
                     isLoading = false
                     repository.insertPokemonShortList(listPokeShort.map { it.toPokemonShortDTO() })
-
                     Lce.ContentPokemon(currentPokemonShortFlow
                         .value
                         .filter { it.name.contains(query, ignoreCase = true) }
                     )
                 },
                 onFailure = { Lce.Error(it) }
+
             )
-    }.onStart { emit(Lce.ContentPokemon(repository.getPokemonShortList())) }
+    }.onStart {
+        emit(
+            Lce.ContentPokemon(
+                repository.getPokemonShortList()
+            )
+        )
+    }
         .shareIn(
             viewModelScope,
             SharingStarted.Eagerly,
@@ -82,3 +87,4 @@ class PokemonViewModel(
         }
     }
 }
+private const val PAGE_SIZE = 40    // количество item на странице (@Query ("limit"))

@@ -1,8 +1,6 @@
 package by.lomazki.pokemontask5.presentation.ui.adapter
 
 import androidx.recyclerview.widget.RecyclerView
-import by.lomazki.pokemontask5.constants.Constants.HEIGHT
-import by.lomazki.pokemontask5.constants.Constants.WEIGHT
 import by.lomazki.pokemontask5.data.model.pokemonfull.PokemonFullEntity
 import by.lomazki.pokemontask5.databinding.ItemFavoriteBinding
 import coil.load
@@ -23,3 +21,6 @@ class FavoriteViewHolder(
         }
     }
 }
+
+private const val WEIGHT = "Weight:  %s"
+private const val HEIGHT = "Height:  %s"

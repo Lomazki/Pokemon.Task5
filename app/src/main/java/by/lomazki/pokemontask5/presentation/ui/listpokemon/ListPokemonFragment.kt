@@ -14,7 +14,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.lomazki.pokemontask5.R
-import by.lomazki.pokemontask5.constants.Constants.ITEMS_TO_LOAD
 import by.lomazki.pokemontask5.databinding.FragmentPokemonsListBinding
 import by.lomazki.pokemontask5.extentions.addPaginationListener
 import by.lomazki.pokemontask5.presentation.models.Lce
@@ -127,3 +126,6 @@ class ListPokemonFragment : Fragment() {
         _binding = null
     }
 }
+
+// при достижении скольки item начнется дозагрузка следующей страницы
+private const val ITEMS_TO_LOAD = 25
