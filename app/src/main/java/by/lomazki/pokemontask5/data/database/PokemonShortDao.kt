@@ -6,7 +6,7 @@ import by.lomazki.pokemontask5.data.model.pokemonshort.PokemonShortEntity
 @Dao
 interface PokemonShortDao {
 
-    @Query("select * from PokemonShortEntity")
+    @Query("SELECT * FROM PokemonShortEntity")
     suspend fun getPokemonsShortEntity(): List<PokemonShortEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

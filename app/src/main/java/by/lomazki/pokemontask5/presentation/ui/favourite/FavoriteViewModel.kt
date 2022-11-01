@@ -16,12 +16,24 @@ class FavoriteViewModel(
 
     init {
         viewModelScope.launch {
-            favPokeList.value = repository.getListPokemonFull()
-                .filter { it.favorite }
+            updateFavPokeList()
+        }
+    }
+
+    fun onSwipeRight(position: Int) {
+        viewModelScope.launch {
+            val userForDelete = favPokeList.value[position]
+            repository.deletePokemon(userForDelete.name)
+            updateFavPokeList()
         }
     }
 
     fun getListFlow(): Flow<List<PokemonFullEntity>> {
         return favPokeList
+    }
+
+    private suspend fun updateFavPokeList(){
+        favPokeList.value = repository.getListPokemonFull()
+            .filter { it.favorite }
     }
 }

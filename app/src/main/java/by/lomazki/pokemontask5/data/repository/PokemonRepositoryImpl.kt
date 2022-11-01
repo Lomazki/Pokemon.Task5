@@ -23,6 +23,12 @@ class PokemonRepositoryImpl(
     private val pokemonListShortFlow = MutableStateFlow(emptyList<PokemonShortEntity>())
     private val pokemonListFullFlow = MutableStateFlow(emptyList<PokemonFullEntity>())
 
+    init {
+        MainScope().launch {
+            pokemonListFullFlow.value = localDB.getPokemonFullListRoom().getOrDefault(emptyList())
+        }
+    }
+
     override suspend fun getPokemonShortList(limit: Int, offset: Int): Result<List<PokemonShortEntity>> {
         return  pokemonListShortFlow
             .map {
@@ -100,23 +106,16 @@ class PokemonRepositoryImpl(
     }
 
     override suspend fun deletePokemon(namePokemon: String) {
-        localDB.deletePokemonFull(
-            pokemonListFullFlow
-                .value
-                .first { it.name == namePokemon }
-        )
+        runCatching {
+            localDB.deletePokemonFull(
+                pokemonListFullFlow
+                    .value
+                    .first { it.name == namePokemon }
+            )
+        }
     }
 
     override suspend fun clearDB() {
         localDB.clearDataBases()
-    }
-
-    private suspend fun getPokemonShortDB(): List<PokemonShortEntity> {     // TODO Работает, удали!
-        return localDB
-            .getPokemonShortListRoom()
-            .fold(
-                onSuccess = { it },
-                onFailure = { emptyList() }
-            )
     }
 }

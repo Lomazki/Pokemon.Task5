@@ -83,9 +83,8 @@ class PokemonViewModel(
 
     fun onLoadMore() {      // TODO не работает
         if (!isLoading) {
-            lceFlow
-                .tryEmit(Lce.Loading)
+            lceFlow.tryEmit(Lce.Loading)
         }
     }
 }
-private const val PAGE_SIZE = 40    // количество item на странице (@Query ("limit"))
+private const val PAGE_SIZE = 140    // количество item на странице (@Query ("limit"))
