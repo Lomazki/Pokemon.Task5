@@ -29,8 +29,12 @@ class PokemonRepositoryImpl(
         }
     }
 
-    override suspend fun getPokemonShortList(limit: Int, offset: Int): Result<List<PokemonShortEntity>> {
-        return  pokemonListShortFlow
+    override suspend fun getPokemonShortList(
+        limit: Int,
+        offset: Int
+    ): Result<List<PokemonShortEntity>> {
+
+        return pokemonListShortFlow
             .map {
                 network.getPokemonListApi(limit, offset)
             }
@@ -76,22 +80,26 @@ class PokemonRepositoryImpl(
     }
 
     override suspend fun getPokemonFull(name: String): PokemonFullEntity {
-        return if (pokemonListFullFlow.value.isEmpty()) {
-            pokemonListFullFlow
-                .runCatching {
+        runCatching {
+            pokemonListFullFlow.value.first { it.name == name }
+        }.fold(
+            onSuccess = {
+                return it
+            },
+            onFailure = {
+                runCatching {
                     network.getPokemonApi(name)
                 }
-                .fold(
-                    onSuccess = {
-                        val curPoke = it.getOrThrow().toPokemonFullEntity()
-                        localDB.insertPokemonFullRoom(curPoke)
-                        curPoke
-                    },
-                    onFailure = { error(it) }
-                )
-        } else {
-            pokemonListFullFlow.value.first { it.name == name }
-        }
+                    .fold(
+                        onSuccess = {
+                            val curPoke = it.getOrThrow().toPokemonFullEntity()
+                            localDB.insertPokemonFullRoom(curPoke)
+                            return curPoke
+                        },
+                        onFailure = { error(it) }
+                    )
+            }
+        )
     }
 
     override suspend fun insertPokemonFull(pokemon: PokemonFullEntity) {

@@ -26,7 +26,8 @@ class PokemonViewModel(
 
     init {
         viewModelScope.launch {
-            currentPokemonShortFlow.value = repository.getPokemonShortList().getOrDefault(emptyList())
+            currentPokemonShortFlow.value =
+                repository.getPokemonShortList(getLimitPageSize(), OFFSET).getOrDefault(emptyList())
         }
     }
 
@@ -39,35 +40,33 @@ class PokemonViewModel(
                     is Lce.Error -> { /* TODO брось ошибку */ }
                     Lce.Loading -> { currentPage++ }
                 }
-                repository.getPokemonShortList(limit = getLimitPageSize())
+                Log.d("LoadingApi", "ViewModel")
+                repository.getPokemonShortList(getLimitPageSize(), OFFSET)
             }
     ) { query, result ->
         result
             .fold(
                 onSuccess = { listPokeShort ->
-                    Log.d("LoadingDB", "3")
                     isLoading = false
                     repository.insertPokemonShortList(listPokeShort.map { it.toPokemonShortDTO() })
-                    Lce.ContentPokemon(currentPokemonShortFlow
-                        .value
-                        .filter { it.name.contains(query, ignoreCase = true) }
-                    )
+                    val sumList = currentPokemonShortFlow.value + listPokeShort
+                    Lce.ContentPokemon(sumList.filter {
+                        it.name.contains(query, ignoreCase = true)
+                    })
                 },
                 onFailure = { Lce.Error(it) }
             )
     }.onStart {
-        Log.d("LoadingDB", "1")
         emit(
             Lce.ContentPokemon(
                 repository.getSavedPokemonShortList()
             )
         )
-        Log.d("LoadingDB", "2")
     }.shareIn(
-            viewModelScope,
-            SharingStarted.Eagerly,
-            replay = 1
-        )
+        viewModelScope,
+        SharingStarted.Eagerly,
+        replay = 1
+    )
 
     private fun getLimitPageSize(): Int {
         return currentPage * PAGE_SIZE
@@ -82,9 +81,11 @@ class PokemonViewModel(
     }
 
     fun onLoadMore() {      // TODO не работает
-        if (!isLoading) {
-            lceFlow.tryEmit(Lce.Loading)
-        }
+//        if (!isLoading) {
+//            lceFlow.tryEmit(Lce.Loading)
+//        }
     }
 }
-private const val PAGE_SIZE = 140    // количество item на странице (@Query ("limit"))
+
+private const val PAGE_SIZE = 50    // количество item на странице (@Query ("limit"))
+private const val OFFSET = 0        // c какой позиции начинать (@Query ("offset"))

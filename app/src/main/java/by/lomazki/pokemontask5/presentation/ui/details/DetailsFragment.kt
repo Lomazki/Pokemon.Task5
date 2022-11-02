@@ -15,6 +15,7 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
 class DetailsFragment : Fragment() {
@@ -22,7 +23,7 @@ class DetailsFragment : Fragment() {
     private var _binding: FragmentDetailsBinding? = null
     private val binding get() = requireNotNull(_binding)
     private val args by navArgs<DetailsFragmentArgs>()
-    private val viewModel by inject<DetailsViewModel> {
+    private val viewModel by viewModel<DetailsViewModel> {
         parametersOf(args.name)
     }
 

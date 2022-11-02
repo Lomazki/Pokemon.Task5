@@ -21,7 +21,7 @@ import by.lomazki.pokemontask5.presentation.ui.adapter.PokemonAdapter
 import com.google.android.material.divider.MaterialDividerItemDecoration
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ListPokemonFragment : Fragment() {
 
@@ -38,7 +38,7 @@ class ListPokemonFragment : Fragment() {
                 )
             })
     }
-    private val viewModel by inject<PokemonViewModel>()
+    private val viewModel by viewModel<PokemonViewModel>()
 
     //-----------------------------------------------------------------------------------------------------
     override fun onCreateView(
@@ -128,4 +128,4 @@ class ListPokemonFragment : Fragment() {
 }
 
 // при достижении скольки item начнется дозагрузка следующей страницы
-private const val ITEMS_TO_LOAD = 25
+private const val ITEMS_TO_LOAD = 10

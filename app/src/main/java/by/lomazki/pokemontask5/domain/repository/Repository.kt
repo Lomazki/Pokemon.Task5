@@ -7,9 +7,9 @@ import kotlinx.coroutines.flow.Flow
 
 interface Repository {
 
-    suspend fun getPokemonShortList(limit: Int = 40, offset: Int = 0): Result<List<PokemonShortEntity>>
+    suspend fun getPokemonShortList(limit: Int , offset: Int ): Result<List<PokemonShortEntity>>
 
-    suspend fun getSavedPokemonShortList(): List<PokemonShortEntity>   // удалить
+    suspend fun getSavedPokemonShortList(): List<PokemonShortEntity>
 
     suspend fun insertPokemonShortList(pokemonList: List<PokemonShortDTO>)
 

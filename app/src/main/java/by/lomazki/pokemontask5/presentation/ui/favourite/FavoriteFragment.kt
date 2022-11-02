@@ -16,13 +16,13 @@ import by.lomazki.pokemontask5.presentation.ui.adapter.FavoriteAdapter
 import com.google.android.material.divider.MaterialDividerItemDecoration
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FavoriteFragment : Fragment() {
 
     private var _binding: FragmentFavoriteBinding? = null
     private val binding get() = requireNotNull(_binding)
-    private val viewModel by inject<FavoriteViewModel>()
+    private val viewModel by viewModel<FavoriteViewModel>()
 
     private val adapter by lazy {
         FavoriteAdapter(requireContext(),

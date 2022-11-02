@@ -18,5 +18,5 @@ data class PokemonFullEntity(
     val url: String,
     @ColumnInfo(name = "avatar_url")
     val avatarUrl: String,
-    var favorite: Boolean
+    val favorite: Boolean
 )
